@@ -1,4 +1,4 @@
-// import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import s from './ContactList.module.css';
 
 const ContactList = ({ visibleContacts, onDeleteContact }) => {
@@ -19,14 +19,16 @@ const ContactList = ({ visibleContacts, onDeleteContact }) => {
         </ul>);
 };
 
-// ContactList.propTypes = {
-//   message: propTypes.string.isRequired,
-// };
-
-// FeedbackOptions.propTypes = {
-//   onLeaveFeedback: PropTypes.func.isRequired,
-// };
-// children: PropTypes.element.isRequired,
+ContactList.propTypes = {
+    visibleContacts: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            number: PropTypes.string.isRequired,
+        })
+    ),
+    onDeleteContact: PropTypes.func.isRequired,
+};
 
 export default ContactList;
 

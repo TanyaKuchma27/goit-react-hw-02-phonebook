@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
-import ContactForm from './components/ContactForm';
-import ContactList from './components/ContactList';
-import Filter from './components/Filter';
-import initialContacts from './contacts.json';
+import ContactForm from './ContactForm';
+import ContactList from './ContactList';
+import Filter from './Filter';
+import initialContacts from '../contacts.json';
 import s from './App.module.css';
 
 class App extends Component { 
@@ -70,7 +70,6 @@ class App extends Component {
       </div>
     );
   }
-
 }
 
 export default App;
