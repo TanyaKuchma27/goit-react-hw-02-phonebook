@@ -1,3 +1,4 @@
+import ContactItem from 'components/ContactItem';
 import PropTypes from 'prop-types';
 import s from './ContactList.module.css';
 
@@ -6,14 +7,12 @@ const ContactList = ({ visibleContacts, onDeleteContact }) => {
         <ul className={s.list}>
             {visibleContacts.map(({ id, name, number }) => (
                 <li key={id} className={s.item}>
-                    {name}:  {number}
-                    <button
-                        type="button"
-                        onClick={() => onDeleteContact(id)}
-                        className={s.btn}
-                    >
-                    Delete
-                    </button>
+                    <ContactItem
+                        id={id}
+                        name={name}
+                        number={number}
+                        onDeleteContact={onDeleteContact}
+                    />                    
                 </li>
             ))}
         </ul>);
@@ -22,12 +21,8 @@ const ContactList = ({ visibleContacts, onDeleteContact }) => {
 ContactList.propTypes = {
     visibleContacts: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
-            number: PropTypes.string.isRequired,
-        })
-    ),
-    onDeleteContact: PropTypes.func.isRequired,
+            id: PropTypes.string.isRequired,            
+        }))    
 };
 
 export default ContactList;
