@@ -61,7 +61,7 @@ class App extends Component {
 
     return (
       <div className={s.container}>
-        <h1>Phonebook2</h1>
+        <h1>Phonebook</h1>
         <ContactForm onSubmit={this.formSubmitHandler}/>
         
         <h2>Contacts</h2>
